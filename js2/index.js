@@ -744,6 +744,41 @@ window.addEventListener("load",function(){
     //     }
     // })
 
+    let popup_alert = this.document.querySelector(".popup_alert")
+    let profile_page = this.document.querySelector(".profile_page")
+
+    let popup_alert_array = [
+        {
+            content : `<h4>TERRYFIC</h4>
+        <p>제 이름 Terry와 '훌륭한'을 뜻하는 Terrific을 결합한 제목으로, 넷플릭스 스타일의 프로필 페이지를 제작했습니다.</p>`,
+        },
+        {
+            content : `<h4>안태리의 프로필페이지</h4>
+            <p>저를 소개하는 프로필 페이지로, 일반적인 레이아웃을 통해 제 이야기를 담았습니다. <br>또한, 이력서와 제가 제작한 팝업, 배너 등을 pdf, psd와 ai 파일로 다운로드할 수 있는 기능도 제공합니다.</p>`
+        }
+    ]
+    
+    terryfic.addEventListener("mouseover",function(){
+        popup_alert.innerHTML = `
+            ${popup_alert_array[0].content}
+        `
+        popup_alert.classList.add("on")
+    })
+    terryfic.addEventListener("mouseout",function(){
+        popup_alert.classList.remove("on")
+    })
+
+    profile_page.addEventListener("mouseover",function(){
+        popup_alert.innerHTML = `
+            ${popup_alert_array[1].content}
+        `
+        popup_alert.classList.add("on")
+    })
+    profile_page.addEventListener("mouseout",function(){
+        popup_alert.classList.remove("on")
+    })
+
+
 
 
 })

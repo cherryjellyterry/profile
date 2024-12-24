@@ -692,3 +692,33 @@ body::-webkit-scrollbar{
 .popup_700_popup::-webkit-scrollbar{
     display: none;
 }
+
+.terryfic{
+    position: relative;
+}
+
+.arrow_terryfic{
+    position: absolute;
+    top: -110%;
+    transform: rotate(180deg);
+    left: -10%;
+}
+
+.popup_alert{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    display: none;
+}
+
+.popup_alert.on{
+    display: block;
+}
+
+.popup_alert h4{
+    margin-bottom: 0.5rem;
+}
