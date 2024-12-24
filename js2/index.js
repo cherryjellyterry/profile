@@ -364,9 +364,10 @@ window.addEventListener("load",function(){
                 var wrapRect = img500.getBoundingClientRect(); // wrap 영역의 위치와 크기
                 var mouseX = e.pageX - wrapRect.left;         // 마우스 X 좌표
                 var mouseY = e.pageY - wrapRect.top;          // 마우스 Y 좌표
+                var sensor = 10
         
                 // 마우스가 wrap 내에 있을 때만 돋보기를 표시
-                if (mouseX < img500.offsetWidth && mouseY < img500.offsetHeight && mouseX > 0 && mouseY > 0) {
+                if (mouseX < img500.offsetWidth - sensor && mouseY < img500.offsetHeight - sensor && mouseX > sensor && mouseY > sensor) {
                     magnifier.style.display = "block";  // 돋보기 표시
                 } else {
                     magnifier.style.display = "none";  // wrap 밖으로 벗어나면 돋보기 숨기기
@@ -544,9 +545,10 @@ window.addEventListener("load",function(){
                 var wrapRect = img700.getBoundingClientRect(); // wrap 영역의 위치와 크기
                 var mouseX = e.pageX - wrapRect.left;         // 마우스 X 좌표
                 var mouseY = e.pageY - wrapRect.top;          // 마우스 Y 좌표
+                var sensor = 10
         
                 // 마우스가 wrap 내에 있을 때만 돋보기를 표시
-                if (mouseX < img700.offsetWidth && mouseY < img700.offsetHeight && mouseX > 0 && mouseY > 0) {
+                if (mouseX < img700.offsetWidth - sensor && mouseY < img700.offsetHeight - sensor && mouseX > sensor && mouseY > sensor) {
                     magnifier.style.display = "block";  // 돋보기 표시
                 } else {
                     magnifier.style.display = "none";  // wrap 밖으로 벗어나면 돋보기 숨기기
@@ -728,60 +730,10 @@ window.addEventListener("load",function(){
                 banner_popup.classList.remove("on")
             })
 
-            var target = document.querySelector('.banner_img>img');  // 이미지 선택
-            var zoom = 1.5;           // zoom 값 가져오기
-            var banner_img = document.querySelector(".banner_img");        // img500 div 선택
+            b()
+
             
-            // magnifier div 생성
-            var magnifier = document.createElement("div");
-            magnifier.classList.add("magnifier"); // magnifier 클래스 추가
-            banner_img.appendChild(magnifier);        // img500 div에 magnifier div 추가
-            
-            // magnifier의 배경 이미지 설정
-            magnifier.style.position = 'absolute'; // magnifier의 위치를 절대값으로 설정
-            magnifier.style.display = 'none'; // 기본적으로 숨김
-            magnifier.style.width = '200px';  // 돋보기 크기 설정
-            magnifier.style.height = '200px'; // 돋보기 크기 설정
-            // magnifier.style.border = '2px solid #ccc'; // 경계선 추가 (선택 사항)
-            magnifier.style.borderRadius = '50%'; // 원형 돋보기
-            magnifier.style.cursor = 'none'; // 커서를 숨김
-        
-            // magnifier의 배경 이미지 크기 설정
-            magnifier.style.backgroundImage = "url('" + target.src + "')";
-            magnifier.style.backgroundSize = target.width * zoom + "px " + target.height * zoom + "px";
-        
-            
-            // 마우스 이동 시 확대 효과
-            banner_img.addEventListener('mousemove', magnify);
-        
-            function magnify(e) {
-                var wrapRect = banner_img.getBoundingClientRect(); // wrap 영역의 위치와 크기
-                var mouseX = e.pageX - wrapRect.left;         // 마우스 X 좌표
-                var mouseY = e.pageY - wrapRect.top;          // 마우스 Y 좌표
-        
-                // 마우스가 wrap 내에 있을 때만 돋보기를 표시
-                if (mouseX < banner_img.offsetWidth && mouseY < banner_img.offsetHeight && mouseX > 0 && mouseY > 0) {
-                    magnifier.style.display = "block";  // 돋보기 표시
-                } else {
-                    magnifier.style.display = "none";  // wrap 밖으로 벗어나면 돋보기 숨기기
-                }
-        
-                // 돋보기가 표시될 때
-                if (magnifier.style.display === "block") {
-                    // 배경 이미지의 위치 계산
-                    var rx = -(mouseX * zoom - magnifier.offsetWidth / 2);
-                    var ry = -(mouseY * zoom - magnifier.offsetHeight / 2);
-        
-                    // 돋보기를 마우스 위치로 이동
-                    var px = mouseX - magnifier.offsetWidth / 2;
-                    var py = mouseY - magnifier.offsetHeight / 2;
-        
-                    // 돋보기를 움직이고 배경 위치를 설정
-                    magnifier.style.left = px + 'px';
-                    magnifier.style.top = py + 'px';
-                    magnifier.style.backgroundPosition = rx + 'px ' + ry + 'px';
-                }
-            }
+
         })
 
     })
@@ -795,3 +747,63 @@ window.addEventListener("load",function(){
 
 
 })
+
+function b(){
+    var target = document.querySelector('.banner_img > img');  // 이미지 선택
+    var zoom = 1.5;  // zoom 값 설정
+    var banner_img = document.querySelector(".banner_img");  // banner_img div 선택
+
+    // magnifier div 생성
+    var magnifier = document.createElement("div");
+    magnifier.classList.add("magnifier");  // magnifier 클래스 추가
+    banner_img.appendChild(magnifier);     // banner_img div에 magnifier div 추가
+
+    // magnifier의 스타일 설정
+    magnifier.style.position = 'absolute';  // magnifier의 위치를 절대값으로 설정
+    magnifier.style.display = 'none';  // 기본적으로 숨김
+    magnifier.style.width = '200px';   // 돋보기 크기 설정
+    magnifier.style.height = '200px';  // 돋보기 크기 설정
+    magnifier.style.borderRadius = '50%';  // 원형 돋보기
+    magnifier.style.cursor = 'none';  // 커서를 숨김
+
+    // magnifier의 배경 이미지 크기 설정
+    magnifier.style.backgroundImage = "url('" + target.src + "')";
+    magnifier.style.backgroundSize = target.width * zoom + "px " + target.height * zoom + "px";
+
+    // 마우스 이동 시 확대 효과
+    banner_img.addEventListener('mousemove', magnify);
+
+    function magnify(e) {
+        var wrapRect = banner_img.getBoundingClientRect(); // banner_img 영역의 위치와 크기
+        var mouseX = e.pageX - wrapRect.left;  // 마우스 X 좌표
+        var mouseY = e.pageY - wrapRect.top;   // 마우스 Y 좌표
+        var sensor = 10
+        // 마우스가 banner_img 내에 있을 때만 돋보기를 표시
+        if (mouseX <= banner_img.offsetWidth - sensor && mouseY <= banner_img.offsetHeight - sensor && mouseX >= sensor && mouseY >= sensor) {
+            console.log(mouseY,banner_img.offsetHeight)
+            magnifier.style.display = "block";  // 돋보기 표시
+        } else {
+            magnifier.style.display = "none";  // 마우스가 영역 밖으로 나가면 돋보기를 숨김
+        }
+
+        // 돋보기가 표시될 때
+        if (magnifier.style.display === "block") {
+            // 배경 이미지의 위치 계산
+            var rx = -(mouseX * zoom - magnifier.offsetWidth / 2);
+            var ry = -(mouseY * zoom - magnifier.offsetHeight / 2);
+
+            // 돋보기를 마우스 위치로 이동
+            var px = mouseX - magnifier.offsetWidth / 2;
+            var py = mouseY - magnifier.offsetHeight / 2;
+
+            // 돋보기를 이동하고 배경 위치 설정
+            magnifier.style.left = px + 'px';
+            magnifier.style.top = py + 'px';
+            magnifier.style.backgroundPosition = rx + 'px ' + ry + 'px';
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+});
