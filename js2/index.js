@@ -738,11 +738,11 @@ window.addEventListener("load",function(){
 
     })
 
-    window.addEventListener("popstate",function(){
-        if(terryfic_inside.classList.contains("on")){
-            terryfic_inside.classList.remove("on")
-        }
-    })
+    // window.addEventListener("popstate",function(){
+    //     if(terryfic_inside.classList.contains("on")){
+    //         terryfic_inside.classList.remove("on")
+    //     }
+    // })
 
 
 
@@ -804,6 +804,3 @@ function b(){
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    
-});
