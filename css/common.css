@@ -1,0 +1,112 @@
+/* common style */
+:root{
+    --main_color:rgb(255, 193, 59);
+    --sub_color: #f8f6df;
+    --font-size-pc:20px;
+    --font-size-tab:18px;
+    --font-size-mob:14px;
+    --font-weight-thin:200;
+    --font-weight-bold:700;
+}
+
+html{
+    font-family: 'Pretendard';
+    font-size: var(--font-size-pc, 20px);
+    /* 혹시 브라우저가 변수를 못 읽을 것을 대비해서 20px도 써줘도 됨 쉼표 뒤에 있는 거는 대안일 뿐이라서 둘이 값이 달라도 앞에 있는거만 읽음 */
+    font-weight: 400;
+    line-height: 1.4;
+    word-break: keep-all;
+    scroll-behavior: smooth;
+}
+.innerContent{
+    width: 1440px;
+    margin: 0 auto;
+}
+.btnCommon{
+    display: inline-block;
+    /* border: 1px solid red; */
+    padding: 0.9rem 1.3rem ;
+    border-radius: 1.7rem;
+    background-color: var(--sub_color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+}
+.btnCommon:hover{
+    background-color: var(--sub_color);
+    color: var(--main_color);
+}
+.btnCommon:active{
+    background-color: var(--main_color);
+    color: var(--sub_color);
+}
+
+/* mc - 메인컬러 넣기. 시맨틱태그 */
+mc{
+    color: var(--main_color);
+}
+
+/* bold - 굵은 폰트. 시맨틱태그 */
+bold{
+    font-weight: var(--font-weight-bold);
+}
+
+/* thin - 얇은 폰트. 시맨틱태그 */
+thin{
+    font-weight: var(--font-weight-thin);
+}
+
+/* 모바일용 화면 PC/Tab에서 안보이게 */
+.mo{
+    display: none;
+}
+
+.small_title{
+    font-size: 0.9rem;
+    letter-spacing: 0.5rem;
+    color: var(--main_color);
+    text-transform: uppercase;
+    font-weight: var(--font-weight-thin);
+    margin-bottom: 1rem;
+}
+
+.big_title{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1rem;
+}
+
+.explain{
+    margin-bottom: 4rem;
+}
+
+/* ///스크롤바/// */
+
+/* 전체 스크롤바 */
+::-webkit-scrollbar {
+    width: 0.8rem; /* 스크롤바의 너비 */
+    height: 12px; /* 가로 스크롤바의 높이 */
+}
+
+/* 스크롤바의 트랙 */
+::-webkit-scrollbar-track {
+    background: var(--sub_color); /* 트랙 배경 색상 */
+    border-radius: 10px; /* 트랙 모서리 둥글게 */
+}
+
+/* 스크롤바의 핸들 */
+::-webkit-scrollbar-thumb {
+    background: var(--main_color); /* 핸들 색상 */
+    border-radius: 10px; /* 핸들 모서리 둥글게 */
+}
+
+/* 핸들 호버 시 색상 변경 */
+::-webkit-scrollbar-thumb:hover {
+    background: #000; /* 핸들 호버 색상 */
+}
+
+/* 가로 스크롤바의 핸들 */
+::-webkit-scrollbar-thumb:horizontal {
+    background: #888; /* 가로 핸들 색상 */
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안태리의 포트폴리오</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="./css2/reset.css">
+    <link rel="stylesheet" href="./css2/style.css">
+    <link rel="stylesheet" href="./css2/media.css">
+    <link rel="stylesheet" href="./css/color.css">
+    <script src="./js2/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.14/build/player/lottie.min.js"></script>
+    <script src="./js2/textColor.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+    <div class="phone_status">
+        <img src="./img/iphone_status.png" alt="상단바">
+    </div>
+    <div class="window_display">
+        <div>
+            <ul>
+                <li class="terryfic">
+                    <a href="#">
+                        <figure>
+                            <img src="./img/terryfic.svg" alt="테리픽">
+                        </figure>
+                        <folder>Terryfic</folder>
+                    </a>
+                </li>
+                <li>
+                    <a href="./index_chrome.html">
+                        <figure>
+                            <img src="./img/Chrome.svg" alt="크롬">
+                        </figure>
+                        <folder><span class="mo_none">안태리의<br></span>프로필페이지</folder>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="optionbar">
+            <figure id="lottie_window"></figure>
+            
+        </div>
+    </div>
+    
+    <div class="terryfic_open">
+        <div id="lottie"></div>
+    </div>
+
+    <script>
+        var animation1 = lottie.loadAnimation({
+        container: document.getElementById('lottie'), // 애니메이션을 표시할 div
+        renderer: 'svg', // 애니메이션 렌더링 방식
+        loop: false, // 애니메이션 반복 여부
+        autoplay: false, // 자동 재생 비활성화
+        path: './js2/terryfic.json' // JSON 파일 경로
+        });
+
+        animation1.goToAndStop(0, true);
+
+        // 애니메이션 로드 완료 시 실행
+        animation1.addEventListener('DOMLoaded', function () {
+            animation1.goToAndStop(0, true); // 초기 프레임으로 이동
+            animation1.play(); // 재생
+        });
+
+        // lottie-web로 애니메이션을 초기화합니다
+        var animation2 = lottie.loadAnimation({
+          container: document.getElementById('lottie_window'), // 애니메이션을 표시할 div
+          renderer: 'svg', // 애니메이션 렌더링 방식 (svg, canvas, html 중 선택)
+          loop: false, // 애니메이션 반복 여부
+          autoplay: false, // 자동 재생 여부
+          path: './js2/icon_optionbar.json' // JSON 파일 경로 (로컬 경로 또는 외부 URL)
+        });
+
+
+        let lottie_window = document.querySelector("#lottie_window")
+        let count = 0;
+
+        lottie_window.addEventListener("click",function(){
+            count++
+            if(count % 2 === 1){
+            
+                animation2.play()
+                animation2.addEventListener('complete', () => {
+                    animation2.pause();
+                });
+            }else{
+                animation2.setDirection(-1)
+                animation2.play()
+                animation2.addEventListener('complete', () => {
+                    animation2.pause();
+                });
+            
+            }
+        })
+
+        
+    </script>
+
+    <div class="terryfic_inside">
+        <ul class="terryfic_top">
+            <li><a href="#"><img src="./img/terryfic_logo.png" alt="테리픽 로고"></a></li>
+            <li><a href="#terryfic_hero">홈</a></li>
+            <li><a href="#project_select">프로젝트</a></li>
+            <li><a href="#popup_select">팝업</a></li>
+            <li><a href="#banner_select">배너</a></li>
+            <li class="btn_close"><a href="#"><img src="./img/close_btn.svg" alt="닫기버튼"></a></li>
+        </ul>
+        <div class="terryfic_hero" id="terryfic_hero">
+            <ul>
+                <li class="hero_section_project">
+                    <div class="hero_img" id="hero_img">
+                        <img src="./img/johnsons_hero.jpg" alt="존슨즈 히어로">
+                    </div>
+                    <section class="hero_txt">
+                        <figure><img src="./img/johnsons_logo.svg" alt="존슨즈베이비 로고"></figure>
+                        <div class="terryfic_hero_title">
+                            <img src="./img/top1.svg" alt="1번프로젝트">
+                            <h3>존슨즈베이비 리디자인 프로젝트</h3>
+                        </div>
+                        <div class="terryfic_hero_txt">
+                            <span>존슨즈베이비 웹사이트를 리디자인하여 사용자 경험을 개선하고 따뜻하고 가족 친화적인 디자인을 구현했습니다. 브랜드의 정체성을 유지하면서도 현대적이고 직관적인 UI를 설계했습니다.</span>
+                        </div>
+                        <div class="terryfic_hero_btn">
+                            <div class="terryfic_hero_btn_top">
+                                <a href="http://johnsonsbaby.dothome.co.kr/" target="_blank" class="btn_common btn_play"><img src="./img/btn_play.svg" alt="재생버튼">퍼블리싱사이트</a>
+                                <a href="#" class="btn_common btn_info btn_info_project"><img src="./img/btn_info.svg" alt="인포버튼">상세 정보</a>
+                            </div>
+                            <div class="terryfic_hero_btn_bottom">
+                                <a href="https://www.figma.com/proto/r9Aj1mOlZS1i23byCh6fYV/%EC%9D%B4%EB%A6%AC%EC%95%88-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=0-1&p=f&viewport=402%2C904%2C0.19&t=9FPdLOPbFIVF44aA-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=66%3A10&show-proto-sidebar=1" target="_blank" class="btn_common btn_play"><img src="./img/btn_play.svg" alt="재생버튼">피그마 프로토타입</a>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    
+                </li>
+            </ul>
+        </div>
+        <div class="project_select" id="project_select">
+            <h4>프로젝트</h4>
+            <div class="swiper train_project">
+                <ul class="swiper-wrapper">
+                    <li id="johnsons_select" class="swiper-slide"><img src="./img/johnsons_thumbnail.jpg" alt="존슨즈"></li>
+                    <li id="akku_select" class="swiper-slide"><img src="./img/cafe_akku_thumbnail.jpg" alt="카페아쿠"></li>
+                    <li id="paw_select" class="swiper-slide"><img src="./img/pawpaw_thumbnail.jpg" alt="포포아카데미"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="popup_select" id="popup_select">
+            <h4>500px*500px 팝업</h4>
+            <div class="swiper train_500_popup">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="./image/popups/blackfriday_popup_1-13.jpg" alt="블랙프라이데이">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/christmas_popup_1.jpg" alt="크리스마스">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/goodbye_summer_popup.jpg" alt="여름이벤트">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/halloween.jpg" alt="할로윈">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/chuseok_final.jpg" alt="추석">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/nike_after_1.jpg" alt="나이키">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/valentine_6.jpg" alt="발렌타인데이">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/seasonoff_1.jpg" alt="시즌오프">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/luckybox_1.jpg" alt="럭키박스">
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="popup_select_2">
+            <h4>500px*700px 팝업</h4>
+            <div class="swiper train_700_popup">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="./image/popups/adidas_1_2.jpg" alt="아디다스 팝업">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/adidas_2_2.jpg" alt="아디다스 팝업2">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/springsale_2.jpg" alt="봄세일">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/seol_1.jpg" alt="설날">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/blackfriday_popup_2.jpg" alt="블랙프라이데이 팝업">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/check_1.jpg" alt="출석체크">
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="banner_select" id="banner_select">
+            <h4>배너</h4>
+            <div class="swiper train_banner">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="./image/banners/blackfriday_1.jpg" alt="블랙프라이데이 배너">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/blackfriday_2_6.jpg" alt="블랙프라이데이 배너">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/summer_2.jpg" alt="여름이벤트">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/nike_1.jpg" alt="나이키 배너">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/dyson_1.jpg" alt="다이슨">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/nespresso_2.jpg" alt="네스프레소">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/genesis_1.jpg" alt="제네시스">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/cafe_banner_1_3.jpg" alt="바닐라라떼">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/cafe_banner_2_6.jpg" alt="샌드위치">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/cafe_banner_3_6.jpg" alt="딸기음료">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+                var swiper1 = new Swiper(".train_project", {
+                    slidesPerView: "auto",
+                    spaceBetween: 18,
+                });
+
+                var swiper2 = new Swiper(".train_500_popup", {
+                    slidesPerView: "auto",
+                    spaceBetween: 18,
+                });
+
+                var swiper3 = new Swiper(".train_700_popup", {
+                    slidesPerView: "auto",
+                    spaceBetween: 18,
+                });
+
+                var swiper4 = new Swiper(".train_banner", {
+                    spaceBetween: 18,
+                    
+                })
+        </script>
+    </div>
+
+    <div class="project_popup">
+        <ul class="project_detail pc">
+            <li><img src="./image/portfolio/pc_baby_1.jpg" alt="존슨즈베이비1"></li>
+            <li><img src="./image/portfolio/pc_baby_2.jpg" alt="존슨즈베이비2"></li>
+            <li><img src="./image/portfolio/pc_baby_6.jpg" alt="존슨즈베이비6"></li>
+        </ul>
+        <ul class="project_detail mo">
+            <li><img src="./image/portfolio/mo_baby_1.jpg" alt="존슨즈베이비1"></li>
+            <li><img src="./image/portfolio/mo_baby_2.jpg" alt="존슨즈베이비2"></li>
+            <li><img src="./image/portfolio/mo_baby_6.jpg" alt="존슨즈베이비6"></li>
+        </ul>
+        <div class="popup_btn_close">
+            <img src="./img/close_btn.svg" alt="닫기버튼">
+        </div>
+    </div>
+
+    <div class="popup_popup">
+
+    </div>
+
+    <div class="popup_700_popup">
+
+    </div>
+
+    <div class="banner_popup">
+
+    </div>
+    <div class="popup_modal"></div>
+
+    
+
+    
+
+</body>
+</html>

@@ -1,0 +1,760 @@
+/* //////////PC 디자인///////// */
+
+/* /////PC 헤더////// */
+header{
+    height: 5rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background-color: #ffffff80;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+header.pc{
+    border-bottom: 3px solid var(--main_color);
+}
+
+header .innerContent{
+    display: flex;
+    height: 100%;
+    justify-content:space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.gnb{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--main_color);
+    font-weight: var(--font-weight-bold);
+}
+
+.gnb>li{
+    /* border: 1px solid red; */
+    margin-right: 0.4rem;
+    padding: 0.6rem 1.3rem ;
+    border-radius: 1.4rem;
+}
+
+.gnb>li:last-of-type{
+    margin-right: 0;
+}
+
+.gnb>li:hover{
+    background-color: var(--sub_color);
+    color: var(--main_color);
+}
+
+.gnb>li:active{
+    background-color: var(--main_color);
+    color: var(--sub_color);
+}
+
+/* ////리뉴얼 gnb//// */
+
+@keyframes shake {
+    0% {
+        transform: translateX(50%) rotate(0); /* 시작 위치 */
+    }
+    25% {
+        transform: translateX(50%) rotate(4deg); /* 위로 5px */
+    }
+    50% {
+        transform: translateX(50%) rotate(0); /* 원래 위치 */
+    }
+    75% {
+        transform: translateX(50%) rotate(-4deg); /* 아래로 5px */
+    }
+    100% {
+        transform: translateX(50%) rotate(0) /* 원래 위치 */
+    }
+}
+
+.pc_header figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 0 0.5rem;
+    position: fixed;
+    width: 9rem;
+    z-index: 100000;
+    height: 3rem;
+    box-sizing: border-box;
+    background-color: var(--sub_color);
+    border-radius: 3rem;
+    right: 50%;
+    transform: translateX(50%);
+    transition: all 0.5s ease 0s;
+    top: 0.5rem;
+    animation: shake 1s ease-in-out infinite;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.gnb_pc_hidden{
+    top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+    transition: all 0.5s ease 0s;
+    max-width: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main_color);
+    backdrop-filter: blur(10px);
+    border-radius: 5rem;
+    position: fixed;
+    text-wrap: nowrap;
+    height: 3rem;
+    padding: 0 1rem;
+    z-index: 90000;
+}
+
+.gnb_pc_hidden:hover{
+    overflow: visible;
+}
+
+.pc_header:hover figure{
+    animation: none;
+    background-color: var(--sub_color);
+}
+
+.gnb_pc li{
+    width: 7rem;
+    display: flex;
+    justify-content: center;
+    text-shadow: 1px;
+    align-items: center;
+}
+
+.gnb_pc li:hover{
+    color: var(--sub_color);
+}
+
+.gnb_pc .blank{
+    width: 9rem;
+}
+
+.pc_header:hover .gnb_pc_hidden{
+    max-width: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.pc_header .btnCommon{
+    height: 3rem;
+    padding: 0 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gnb_pc{
+    display: flex;
+    text-transform: uppercase;
+    gap: 2rem;
+    font-weight: var(--font-weight-bold);
+
+}
+
+.pc_header img{
+    height: 100%;
+}
+
+
+
+/* ////히어로섹션//// */
+
+.hero{
+    /* border: 1px solid red; */
+    height: 100vh;
+    position: relative;
+    z-index: -1;
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.floating{
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.floating .innerContent{
+    /* border: 1px solid red; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.floating h3{
+    font-size: 3rem;
+}
+
+/* /////어바웃미 시작하는 부분////// */
+
+.con1{
+    padding-top: 7.5rem;
+    position: relative;
+}
+
+.con1 .innerContent{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.con1_img{
+    margin-top: 4rem;
+    line-height: 0;
+}
+
+.con1:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3.25rem;
+    background-color: var(--main_color);
+    z-index: -1;
+}
+
+/* /////스킬 - 어바웃미///// */
+
+.con2{
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+}
+
+.con2 .innerContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.con2 section{
+    width: calc(50% - 3.5rem);
+}
+
+.pro2 dl{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.con2 dt{
+    color: var(--main_color);
+    font-weight: var(--font-weight-bold);
+}
+
+.pro2 dt{
+    width: 12rem;
+    margin-bottom: 1.5rem;
+}
+
+.pro2 dt:last-of-type{
+    margin-bottom: 1rem;
+}
+
+.pro2 dd{
+    width: calc(100% - 12rem);
+}
+
+.pro2 dd ul{
+    display: flex;
+    align-items: space;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.pro2 dd ul li{
+    font-size: 0.8rem;
+    background-color: var(--main_color);
+    color: var(--sub_color);
+    padding: 0.3rem 1rem;
+    /* font-weight: var(--font-weight-bold); */
+}
+
+.pro2 dd ul li:nth-of-type(2n){
+    background-color: var(--sub_color);
+    color: var(--main_color);
+}
+
+.con2 p{
+    margin-bottom: 1rem;
+}
+
+.con2 p:last-of-type{
+    margin-bottom: 0;
+}
+
+.pro3{
+    margin-top: 3.5rem;
+}
+
+.pro3 dt{
+    margin-bottom: 1rem;
+}
+
+.pro3 li{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.pro3 li i{
+    width: 5rem;
+}
+
+.pro3 li span{
+    /* border: 1px solid red; */
+    width: calc(100% - 5rem);
+}
+
+/* ////에듀//// */
+
+.con3{
+    background-color: var(--main_color);
+    color: white;
+    padding-top: 7.5rem;
+    padding-bottom: 6.5rem;
+}
+
+.con3 h5{
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0.5rem;
+}
+
+.eduList{
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 3px solid red; */
+    box-sizing: border-box;
+}
+
+.eduList li{
+    width: calc((100% - (3 - 1) * 1rem) / 3);
+    margin-right: 1rem;
+    padding: 1rem 0;
+    /* border: 1px solid blue; */
+    box-sizing: border-box;
+}
+
+.eduList li:nth-of-type(3n){
+    margin-right: 0;
+}
+
+.eduList h6 img{
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+
+.eduList h6{
+    /* border: 1px solid red; */
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+
+/* /////팝업///// */
+
+.con4{
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+    text-align: center;    
+}
+
+.popupList{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.popupList>li{
+    width: calc((100% - (3 - 1) * 1rem) / 3);
+    margin-right: 1rem;
+    /* border: 1px solid red; */
+    padding: 1rem 0;
+    /* box-sizing: border-box; */
+}
+
+.popupList>li:nth-of-type(3n){
+    margin-right: 0;
+}
+
+.popupList li div a{
+    display: flex;
+    align-items: center;
+}
+
+.popupList li div a img{
+    height: 1.5rem;
+    /* border: 1px solid blue;
+    box-sizing: border-box; */
+}
+
+.popupList div:nth-of-type(1){
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    /* border: 1px solid red;
+    box-sizing: border-box; */
+}
+
+.popupList div h6{
+    font-weight: var(--font-weight-bold);
+    font-size: 1.1rem;
+    /* border: 1px solid red;
+    box-sizing: border-box; */
+}
+
+.popupList p{
+    margin-bottom: 0.5rem;
+}
+
+.popupList>p:last-of-type{
+    margin-bottom: 0;
+}
+
+.popupList div:nth-of-type(2){
+    margin-top: 1rem;
+    display: flex;
+}
+
+.popupList div dl{
+    flex: 1;
+}
+
+.popupList div dt{
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0.5rem;
+}
+
+.popupList div dd{
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    text-transform: lowercase;
+}
+
+.popupList div dd:last-of-type{
+    margin-bottom: 0;
+}
+
+
+
+
+/* ////배너//// */
+
+.con5{
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+}
+
+.con5>.innerContent{
+    text-align: center;
+}
+
+.slideStation{
+    /* width: 100%; */
+    overflow: hidden;
+    /* border: 1px solid blue; */
+    position: relative;
+}
+
+.pagination>span.on{
+    background-color: var(--main_color);
+    opacity: 1;
+    width: 2rem;
+    border-radius: 0.4rem;
+}
+
+.train{
+    display: flex;
+    text-align: left;
+    width: calc(100% * 10);
+    z-index: 10;
+    transition: all 0.5s ease 0s;
+    /* animation: slideMoveHorizontal 40s ease 0s infinite; */
+}
+
+.train>li{
+    flex: 1;
+}
+
+.train>li figure{
+    line-height: 0;
+    /* width: 100%; */
+    /* height: 600px; */
+}
+
+.train>li figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.train li .innerContent div a{
+    display: flex;
+    align-items: center;
+    line-height: 0;
+}
+
+.train li .innerContent div a img{
+    height: 1.5rem;
+    /* border: 1px solid blue;
+    box-sizing: border-box; */
+}
+
+.train .innerContent{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.train .innerContent section{
+    flex:1;
+    /* border: 1px solid red; */
+}
+
+.train .innerContent section:nth-of-type(1){
+    box-sizing: border-box;
+    margin-right: 7rem;
+}
+
+.banner_title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    /* border: 1px solid red; */
+    align-items: center;
+}
+
+.banner_title h6{
+    font-weight: var(--font-weight-bold);
+    font-size: 1.1rem;
+}
+
+.train li .innerContent section p{
+    margin-bottom: 0.5rem;
+}
+
+.train li .innerContent section p:last-of-type{
+    margin-bottom: 0;
+}
+
+.banner_info{
+    display: flex;
+}
+
+.banner_info dl{
+    flex: 1;
+}
+
+.banner_info dl:nth-of-type(1){
+    margin-right: 1rem;
+}
+
+.banner_info dt{
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1rem;
+    line-height: 1rem;
+    padding: 0.25rem 0;
+    /* border: 1px solid blue; */
+}
+
+.banner_info dd{
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    text-transform: lowercase;
+}
+
+.slideStation .train li section div dd:last-of-type{
+    margin-bottom: 0;
+}
+
+.con6>.innerContent {
+    text-align: center;
+}
+
+.project1{
+    position: relative;
+    margin: 3.5rem 0;
+    text-align: center;
+}
+
+.project2{
+    position: relative;
+    margin: 3.5rem 0;
+    text-align: center;
+}
+
+.project3{
+    position: relative;
+    margin: 3.5rem 0;
+    text-align: center;
+}
+
+.project li{
+    line-height: 0;
+}
+
+.project img{
+    max-width: 1920px;
+    width: 100%;
+    line-height: 0;
+}
+
+.project_menu{
+    display: flex;
+    position: sticky;
+    top: calc(100vh - 5rem);
+    justify-content: center;
+    gap: 1rem;
+}
+
+#con6{
+    padding: 7.5rem 0;
+}
+
+.con7{
+    padding: 7.5rem 0;
+    text-align: center;
+}
+
+.con7 h2{
+    font-size: 5rem;
+    line-height: 1.4;
+}
+
+.con7 p{
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.con7 a{
+    margin-top: 5rem;
+}
+
+.con6 h5{
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1rem;
+}
+
+.project_menu{
+    margin-bottom: 3.5rem;
+
+}
+
+.project_menu a{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background-color: var(--main_color);
+}
+
+.swiper-button-next, .swiper-button-prev{
+    color: var(--main_color);
+}
+
+.pc_header_btn_resume{
+    height: 1rem;
+    padding-bottom: 0.3rem;
+}
+
+.pc_header_btn_resume img{
+    height: 100%;
+}
+
+.gnb_pc{
+    color: #242424;
+    
+}
+
+.project_gnb{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.gnb_2depth{
+    max-height: 0;
+    position: absolute;
+    top: 3rem;
+    border-radius: 0 0 3rem 3rem;
+    overflow: hidden;
+    z-index: 50000;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.project_gnb:hover{
+    height: 10rem;
+}
+
+.project_gnb:hover .gnb_2depth{
+    max-height: 10rem;
+}
+
+
+.gnb_2depth>li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main_color);
+    padding: 1rem;
+}
+
+.gnb_2depth>li a{
+    height: 100%;
+}
+
+.gnb_2depth>li:hover{
+    color: #232323;
+}
+
+.text_box_wrap{
+    height: 6rem;
+}
+
+
+.text_box{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: var(--font-weight-bold);
+}
+
+.blink {
+animation: blink 0.5s infinite;
+font-size: 2.5rem;
+}
+
+@keyframes blink {
+to {
+    opacity: 0;
+}
+}
+
