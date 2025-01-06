@@ -1,0 +1,45 @@
+@keyframes slideMoveHorizontal {
+    0%{
+        transform: translateX(0%);
+    }
+
+    10%{
+        transform: translateX(calc((100 / 10) * (10 - 9) * -1%));
+    }
+
+    20%{
+        transform: translateX(calc((100 / 10) * (10 - 8) * -1%));
+    }
+
+    30%{
+        transform: translateX(calc((100 / 10) * (10 - 7) * -1%));
+    }
+
+    40%{
+        transform: translateX(calc((100 / 10) * (10 - 6) * -1%));
+    }
+
+    50%{
+        transform: translateX(calc((100 / 10) * (10 - 5) * -1%));
+    }
+
+    60%{
+        transform: translateX(calc((100 / 10) * (10 - 4) * -1%));
+    }
+
+    70%{
+        transform: translateX(calc((100 / 10) * (10 - 3) * -1%));
+    }
+
+    80%{
+        transform: translateX(calc((100 / 10) * (10 - 2) * -1%));
+    }
+
+    90%{
+        transform: translateX(calc((100 / 10) * (10 - 1) * -1%));
+    }
+
+    100%{
+        transform: translateX(0%);
+    }
+}

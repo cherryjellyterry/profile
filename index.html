@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안태리의 포트폴리오</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="./css2/reset.css?v=1.0.1">
+    <link rel="stylesheet" href="./css2/style.css?v=1.0.1">
+    <link rel="stylesheet" href="./css2/media.css?v=1.0.1">
+    <link rel="stylesheet" href="./css/color.css?v=1.0.1">
+    <script src="./js2/index.js?v=1.0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.14/build/player/lottie.min.js"></script>
+    <script src="./js2/textColor.js?v=1.0.1"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- 기본 seo -->
+    <meta name="description" content="웹 퍼블리셔 안태리의 포트폴리오 용도로 만든 프로필페이지입니다.">
+    <meta name="keywords" content="프로필페이지, 웹디자이너, 웹퍼블리셔, 포트폴리오사이트, 웹퍼블리셔포트폴리오사이트, 프로필홈페이지, 웹퍼블리셔포트폴리오, 웹디자이너포트폴리오, 웹디자인포트폴리오">
+
+    <!-- 파비콘 -->
+    <link rel="icon" sizes="32x32" href="./image/portfolio/favicon.png" type="image/png">
+
+</head>
+<body>
+    <div class="phone_status">
+        <img src="./img/iphone_status.png" alt="상단바">
+    </div>
+    <div class="window_display">
+        <div>
+            <ul>
+                <li class="terryfic">
+                    <a href="#">
+                        <figure>
+                            <img src="./img/terryfic.svg" alt="테리픽">
+                        </figure>
+                        <folder>Terryfic</folder>
+                    </a>
+                    <div class="arrow_terryfic">
+                        
+                    </div>
+                </li>
+                <li class="profile_page">
+                    <a href="./index_chrome.html">
+                        <figure>
+                            <img src="./img/Chrome.svg" alt="크롬">
+                        </figure>
+                        <folder><span class="mo_none">안태리의<br></span>프로필페이지</folder>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="optionbar">
+            <div id="lottie_window"></div>
+            
+        </div>
+    </div>
+    
+    <div class="terryfic_open">
+        <div id="lottie"></div>
+    </div>
+
+    <div class="popup_alert">
+        
+    </div>
+
+    <script>
+        var animation1 = lottie.loadAnimation({
+        container: document.getElementById('lottie'), // 애니메이션을 표시할 div
+        renderer: 'svg', // 애니메이션 렌더링 방식
+        loop: false, // 애니메이션 반복 여부
+        autoplay: false, // 자동 재생 비활성화
+        path: './js2/terryfic.json' // JSON 파일 경로
+        });
+
+        animation1.goToAndStop(0, true);
+
+        // 애니메이션 로드 완료 시 실행
+        animation1.addEventListener('DOMLoaded', function () {
+            animation1.goToAndStop(0, true); // 초기 프레임으로 이동
+            animation1.play(); // 재생
+        });
+
+        // lottie-web로 애니메이션을 초기화합니다
+        var animation2 = lottie.loadAnimation({
+          container: document.getElementById('lottie_window'), // 애니메이션을 표시할 div
+          renderer: 'svg', // 애니메이션 렌더링 방식 (svg, canvas, html 중 선택)
+          loop: false, // 애니메이션 반복 여부
+          autoplay: false, // 자동 재생 여부
+          path: './js2/123456.json' // JSON 파일 경로 (로컬 경로 또는 외부 URL)
+        });
+
+
+        let lottie_window = document.querySelector("#lottie_window")
+        // let count = 0;
+
+        window.addEventListener("mousemove",function(e){
+            let frame = e.pageX/window.innerWidth*animation2.totalFrames
+
+            // count++
+            // if(count % 2 === 1){
+            
+            //     animation2.play()
+            //     animation2.addEventListener('complete', () => {
+            //         animation2.pause();
+            //     });
+            // }else{
+            //     animation2.setDirection(-1)
+            //     animation2.play()
+            //     animation2.addEventListener('complete', () => {
+            //         animation2.pause();
+            //     });
+            
+            // }
+            animation2.goToAndStop(frame, isFrame = true);
+
+ 
+        })
+
+        
+    </script>
+
+    <div class="terryfic_inside">
+        <ul class="terryfic_top">
+            <li><a href="#"><img src="./img/terryfic_logo.png" alt="테리픽 로고"></a></li>
+            <li><a href="#terryfic_hero">홈</a></li>
+            <li><a href="#project_select">프로젝트</a></li>
+            <li><a href="#popup_select">팝업</a></li>
+            <li><a href="#banner_select">배너</a></li>
+            <li class="btn_close"><a href="#"><img src="./img/close_btn.svg" alt="닫기버튼"></a></li>
+        </ul>
+        <div class="terryfic_hero swiper train_hero_terryfic" id="terryfic_hero">
+            <ul class="swiper-wrapper ">
+                <li class="hero_section_project swiper-slide">
+                    <div class="hero_img" id="hero_img">
+                        <img src="./img/johnsons_hero.jpg" alt="존슨즈 히어로">
+                    </div>
+                    <section class="hero_txt">
+                        <figure><img src="./img/johnsons_logo.svg" alt="존슨즈베이비 로고"></figure>
+                        <div class="terryfic_hero_title">
+                            <img src="./img/top1.svg" alt="1번프로젝트">
+                            <h3>존슨즈베이비 리디자인 프로젝트</h3>
+                        </div>
+                        <div class="terryfic_hero_txt">
+                            <span>존슨즈베이비 웹사이트를 리디자인하여 사용자 경험을 개선하고 따뜻하고 가족 친화적인 디자인을 구현했습니다. 브랜드의 정체성을 유지하면서도 현대적이고 직관적인 UI를 설계했습니다.</span>
+                        </div>
+                        <div class="terryfic_hero_btn">
+                            <div class="terryfic_hero_btn_top">
+                                <a href="http://johnsonsbaby.dothome.co.kr/" target="_blank" class="btn_common btn_play"><img src="./img/btn_play.svg" alt="재생버튼">퍼블리싱사이트</a>
+                                <a href="#" class="btn_common btn_info btn_info_project"><img src="./img/btn_info.svg" alt="인포버튼">상세 정보</a>
+                            </div>
+                            <div class="terryfic_hero_btn_bottom">
+                                <a href="https://www.figma.com/proto/r9Aj1mOlZS1i23byCh6fYV/%EC%9D%B4%EB%A6%AC%EC%95%88-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=0-1&p=f&viewport=402%2C904%2C0.19&t=9FPdLOPbFIVF44aA-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=66%3A10&show-proto-sidebar=1" target="_blank" class="btn_common btn_play"><img src="./img/btn_play.svg" alt="재생버튼">피그마 프로토타입</a>
+                            </div>
+                        </div>
+                    </section>
+                </li>
+                <li class="hero_section_project swiper-slide">
+                    <div class="hero_img" id="hero_img">
+                        <img src="./img/akku_hero.jpg" alt="cafeakku">
+                    </div>
+                    <section class="hero_txt">
+                        <figure><img src="./img/akku_logo.svg" alt="cafeakku 로고"></figure>
+                        <div class="terryfic_hero_title">
+                            <img src="./img/top2.svg" alt="2번프로젝트">
+                            <h3>카페아쿠 프로젝트</h3>
+                        </div>
+                        <div class="terryfic_hero_txt">
+                            <span>Cafe Akku는 커피 원두 로스팅의 전문성과 고객 소통, 비즈니스 상담까지 아우르는 컨셉 카페 프로젝트입니다. 이 프로젝트는 페어링 플랜트, 프랜차이즈 FAQ, 온라인 비즈니스 상담 페이지 등 카페의 개성을 살린 다양한 웹페이지를 통해 독창적인 브랜드 스토리를 전달합니다.</span>
+                        </div>
+                        <div class="terryfic_hero_btn">
+                            <div class="terryfic_hero_btn_top">
+                                <a href="http://cafeakku.dothome.co.kr/" target="_blank" class="btn_common btn_play"><img src="./img/btn_play.svg" alt="재생버튼">퍼블리싱사이트</a>
+                                <a href="#" class="btn_common btn_info btn_info_project"><img src="./img/btn_info.svg" alt="인포버튼">상세 정보</a>
+                            </div>
+                            <div class="terryfic_hero_btn_bottom">
+                                <a href="https://www.figma.com/proto/HflkAlECjR4GVHKMEM5Fvm/Cafe-Akku?node-id=0-1&p=f&viewport=253%2C960%2C0.1&t=Yk5GkEB9pbYvgAFs-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=34%3A25&show-proto-sidebar=1" target="_blank" class="btn_common btn_play"><img src="./img/btn_play.svg" alt="재생버튼">피그마 프로토타입</a>
+                            </div>
+                        </div>
+                    </section>
+                </li>
+                <li class="hero_section_project swiper-slide">
+                    <div class="hero_img" id="hero_img">
+                        <img src="./img/paw_hero.jpg" alt="pawpaw 히어로">
+                    </div>
+                    <section class="hero_txt">
+                        <figure><img src="./img/paw_logo.svg" alt="pawpaw 로고"></figure>
+                        <div class="terryfic_hero_title">
+                            <img src="./img/top3.svg" alt="3번프로젝트">
+                            <h3>포포아카데미 프로젝트</h3>
+                        </div>
+                        <div class="terryfic_hero_txt">
+                            <span>포포아카데미는 강아지 훈련과 행동 교정을 전문으로 하는 가상의 브랜드로, 반려견과 보호자 간의 유대감을 강화하는 데 중점을 둔 서비스를 제공합니다. 반려동물 산업에 대한 이해와 창의적인 웹 디자인 기술을 결합한 작품입니다.</span>
+                        </div>
+                        <div class="terryfic_hero_btn">
+                            <div class="terryfic_hero_btn_top">
+                                <a href="https://cherryjellyterry.github.io/pawpawacademy/" target="_blank" class="btn_common btn_play"><img src="./img/btn_play.svg" alt="재생버튼">퍼블리싱사이트</a>
+                                <a href="#" class="btn_common btn_info btn_info_project"><img src="./img/btn_info.svg" alt="인포버튼">상세 정보</a>
+                            </div>
+                            <div class="terryfic_hero_btn_bottom">
+                                <a href="https://www.figma.com/proto/CX8FDjUUFKX5AecvUrfGov/%ED%8F%AC%ED%8F%AC%EC%95%84%EC%B9%B4%EB%8D%B0%EB%AF%B8?node-id=0-1&p=f&viewport=541%2C399%2C0.08&t=zAMh5hdieUK94R96-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2%3A317&show-proto-sidebar=1" target="_blank" class="btn_common btn_play"><img src="./img/btn_play.svg" alt="재생버튼">피그마 프로토타입</a>
+                            </div>
+                        </div>
+                    </section>
+                </li>
+            </ul>
+        </div>
+        <div class="project_select" id="project_select">
+            <h4>반응형으로 디자인하고 퍼블리싱한 프로젝트</h4>
+            <div class="swiper train_project">
+                <ul class="swiper-wrapper">
+                    <li id="johnsons_select" class="swiper-slide">
+                        <a href="#terryfic_hero"><img src="./img/johnsons_thumbnail.jpg" alt="존슨즈"></a>
+                    </li>
+                    <li id="akku_select" class="swiper-slide">
+                        <a href="#terryfic_hero"><img src="./img/cafe_akku_thumbnail.jpg" alt="카페아쿠"></a></li>
+                    <li id="paw_select" class="swiper-slide">
+                        <a href="#terryfic_hero">
+                            <img src="./img/pawpaw_thumbnail.jpg" alt="포포아카데미">
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="popup_select" id="popup_select">
+            <h4>직접 디자인한 500px*500px 팝업</h4>
+            <div class="swiper train_500_popup">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="./image/popups/blackfriday_popup_1-13.jpg" alt="블랙프라이데이">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/christmas_popup_1.jpg" alt="크리스마스">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/goodbye_summer_popup.jpg" alt="여름이벤트">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/halloween.jpg" alt="할로윈">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/chuseok_final.jpg" alt="추석">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/nike_after_1.jpg" alt="나이키">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/valentine_6.jpg" alt="발렌타인데이">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/seasonoff_1.jpg" alt="시즌오프">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/luckybox_1.jpg" alt="럭키박스">
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="popup_select_2">
+            <h4>직접 디자인한 500px*700px 팝업</h4>
+            <div class="swiper train_700_popup">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="./image/popups/adidas_1_2.jpg" alt="아디다스 팝업">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/adidas_2_2.jpg" alt="아디다스 팝업2">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/springsale_2.jpg" alt="봄세일">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/seol_1.jpg" alt="설날">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/blackfriday_popup_2.jpg" alt="블랙프라이데이 팝업">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/popups/check_1.jpg" alt="출석체크">
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="banner_select" id="banner_select">
+            <h4>직접 디자인한 다양한 사이즈의 배너</h4>
+            <div class="swiper train_banner">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="./image/banners/blackfriday_1.jpg" alt="블랙프라이데이 배너">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/blackfriday_2_6.jpg" alt="블랙프라이데이 배너">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/summer_2.jpg" alt="여름이벤트">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/nike_1.jpg" alt="나이키 배너">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/dyson_1.jpg" alt="다이슨">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/nespresso_2.jpg" alt="네스프레소">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/genesis_1.jpg" alt="제네시스">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/cafe_banner_1_3.jpg" alt="바닐라라떼">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/cafe_banner_2_6.jpg" alt="샌드위치">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="./image/banners/cafe_banner_3_6.jpg" alt="딸기음료">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <div id="bye_animation"></div>
+            <div class="footer_list">
+                <ul>
+                    <li>포트폴리오 프로필페이지 용도로 만든 페이지입니다.</li>
+                    <li>웹디자이너/웹퍼블리셔 안태리</li>
+                    <li>전화번호 : 010-3921-1233</li>
+                    <li>이메일주소 : hangb0303@gmail.com</li>
+                </ul>
+                <ul>
+                    <li><h1 class="logo_foot"><a href="#"><img src="./img/terryfic_logo.png" alt="테리픽 로고"></a></h1></li>
+                    <li><a href="#terryfic_hero">홈</a></li>
+                    <li><a href="#project_select">프로젝트</a></li>
+                    <li><a href="#popup_select">팝업</a></li>
+                    <li><a href="#banner_select">배너</a></li>
+                </ul>
+            </div>
+
+            <script>
+                var animation3 = lottie.loadAnimation({
+                container: document.getElementById('bye_animation'), // 애니메이션을 표시할 div
+                renderer: 'svg', // 애니메이션 렌더링 방식
+                loop: true, // 애니메이션 반복 여부
+                autoplay: true, // 자동 재생 비활성화
+                path: './js2/bye.json' // JSON 파일 경로
+                });
+            </script>
+            
+        </footer>
+
+
+        <script>
+                var swiper1 = new Swiper(".train_project", {
+                    slidesPerView: "auto",
+                    spaceBetween: 18,
+                });
+
+                var swiper2 = new Swiper(".train_500_popup", {
+                    slidesPerView: "auto",
+                    spaceBetween: 18,
+                });
+
+                var swiper3 = new Swiper(".train_700_popup", {
+                    slidesPerView: "auto",
+                    spaceBetween: 18,
+                });
+
+                var swiper4 = new Swiper(".train_banner", {
+                    spaceBetween: 18,
+                    
+                })
+
+                var swiper5 = new Swiper(".train_hero_terryfic", {
+                    autoplay : {  // 자동 슬라이드 설정 , 비 활성화 시 false
+                        delay : 3000,   // 시간 설정
+                    },
+                    speed:800
+                })
+                // 마우스가 슬라이드에 들어갔을 때 자동 슬라이드 멈춤
+                swiper5.el.addEventListener("mouseenter", function() {
+                    swiper5.autoplay.stop();
+                });
+
+                // 마우스가 슬라이드에서 나갔을 때 자동 슬라이드 재시작
+                swiper5.el.addEventListener("mouseleave", function() {
+                    swiper5.autoplay.start();
+                });
+        </script>
+    </div>
+
+    <div class="project_popup">
+        <ul class="project_detail pc">
+            <li><img src="./image/portfolio/pc_baby_1.jpg" alt="존슨즈베이비1"></li>
+            <li><img src="./image/portfolio/pc_baby_2.jpg" alt="존슨즈베이비2"></li>
+            <li><img src="./image/portfolio/pc_baby_6.jpg" alt="존슨즈베이비6"></li>
+        </ul>
+        <ul class="project_detail mo">
+            <li><img src="./image/portfolio/mo_baby_1.jpg" alt="존슨즈베이비1"></li>
+            <li><img src="./image/portfolio/mo_baby_2.jpg" alt="존슨즈베이비2"></li>
+            <li><img src="./image/portfolio/mo_baby_6.jpg" alt="존슨즈베이비6"></li>
+        </ul>
+        <div class="popup_btn_close">
+            <img src="./img/close_btn.svg" alt="닫기버튼">
+        </div>
+    </div>
+
+    <div class="popup_popup">
+
+    </div>
+
+    <div class="popup_700_popup">
+
+    </div>
+
+    <div class="banner_popup">
+
+    </div>
+    <div class="popup_modal"></div>
+
+    
+
+    
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+.phone_status{
+    display: none;
+}
+.project_detail.mo{
+    display: none;
+}
+
+@media (max-width : 1000px){
+    html{
+        font-size: 18px;
+    }
+    .window_display ul{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 70%;
+        gap: 2rem;
+        transform: translate(-50%,-50%);
+    }
+    .terryfic_hero_txt{
+        width: 60%;
+    }
+    .hero_txt{
+        margin-left: 1rem;
+    }
+    .project_select{
+        padding: 0 1rem;
+        margin: 2rem 0;
+    }
+    .popup_700_popup{
+        flex-direction: column;
+        height: auto;
+        width: 25rem;
+    }
+    .popup_700_popup .popup_desc{
+        width: 100%;
+    }
+    .popup_700_popup{
+        max-height: 70vh;
+        overflow: auto;
+        
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20rem;
+    }
+    footer>.footer_list>ul{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+    footer .footer_list{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #bye_animation{
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (max-width:768px){
+    .project_detail.mo{
+        display: block;
+    }
+    .project_detail.pc{
+        display: none;
+    }
+
+
+}
+
+
+@media (max-width : 500px){
+    html{
+        font-size: 14px;
+    }
+    .optionbar{
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        border-radius: 1rem;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        height: 7rem;
+        display: none;
+    }
+    #lottie_window{
+        display: flex;
+        align-items: center;
+        height: 80%;
+        padding-left: 1rem;
+    }
+    .window_display{
+        display: flex;
+        width: 100%;
+    }
+    .window_display ul{
+        justify-self: center;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 90%;
+        gap: 1rem;
+        top: 8rem;
+    }
+    .window_display ul li{
+        width: 100%;
+        height: 100%;
+    }
+    .window_display figure{
+        height: auto;
+        width: 100%;
+    }
+    .window_display figure img{
+        width: 100%;
+    }
+    .phone_status{
+        display: block;
+        height: 3rem;
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+    .phone_status img{
+        width: 100%;
+        object-fit: contain;
+    }
+    .mo_none{
+        display: none;
+    }
+    .terryfic_top li{
+        display: none;
+    }
+    .terryfic_top li:nth-of-type(1){
+        display: block;
+    }
+    .terryfic_top li:last-of-type{
+        display: block;
+    }
+    .hero_img::after{
+        background: rgba(0, 0, 0, 0.63);
+        width: 100%;
+    }
+    .hero_img img{
+        width: 100%;
+    }
+    .terryfic_hero_txt{
+        width: 100%;
+    }
+    .hero_txt{
+        margin-right: 1rem;
+    }
+    .popup_alert{
+        position: fixed;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 2rem;
+        border-radius: 1rem;
+        background-color: white;
+        display: none;
+        width: 70%;
+    }
+    .popup_alert.on{
+        display: none;
+    }
+    .window_display{
+        background: url(../img/window.jpg) no-repeat 50% 50% / cover;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+    footer{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+}
+@media (max-width : 300px){
+    .popup_700_popup{
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+    .popup_700_popup>section:nth-of-type(1){
+        width: 100%;
+        height: auto;
+        flex: 1;
+    }
+    .popup_700_popup>section:nth-of-type(1) img{
+        height: auto;
+    }
+    .popup_700_popup .popup_desc{
+        width: 100%;
+    }
+    .popup_popup{
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+    .popup_popup>section:nth-of-type(1){
+        width: 100%;
+        height: auto;
+        flex: 1;
+    }
+    .popup_popup>section:nth-of-type(1) img{
+        height: auto;
+    }
+    .popup_popup .popup_desc{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .terryfic_hero_btn_top{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .terryfic_hero_txt{
+        display: none;
+    }
+    .terryfic_hero_title{
+        margin-bottom: 1rem;
+        word-break: keep-all;
+    }
+}

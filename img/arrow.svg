@@ -1,0 +1,43 @@
+<svg width="782" height="919" viewBox="0 0 782 919" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 그라데이션 정의 -->
+  <defs>
+    <linearGradient id="gradient-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="orange" />
+      <stop offset="50%" stop-color="red" />
+      <stop offset="100%" stop-color="purple" />
+    </linearGradient>
+    <linearGradient id="gradient-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="white" />
+      <stop offset="100%" stop-color="cyan" />
+    </linearGradient>
+  </defs>
+
+  <!-- 애니메이션 대상 -->
+  <path 
+    d="M0.50004 453L244.5 0.499979L485 453L301.029 366.178C294.848 679.579 707.811 937.748 781.526 861.464C718.441 986.986 183.248 936.989 168.15 375.015L0.50004 453Z" 
+    fill="transparent" 
+    stroke="url(#gradient-stroke)" 
+    stroke-width="4" 
+    stroke-dasharray="3500" 
+    stroke-dashoffset="3500">
+    
+    <!-- 선이 그려지는 애니메이션 -->
+    <animate 
+      attributeName="stroke-dashoffset" 
+      from="3500" 
+      to="0" 
+      dur="3s" 
+      repeatCount="indefinite" 
+    />
+    
+    <!-- 내부 색상이 채워지는 애니메이션 -->
+    <!-- <animate 
+      attributeName="fill" 
+      from="transparent" 
+      to="purple" 
+      dur="3s" 
+      repeatCount="indefinite" 
+      begin="1.5s" 
+    /> -->
+  </path>
+</svg>
