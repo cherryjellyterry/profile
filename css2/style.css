@@ -211,7 +211,7 @@ folder{
 .terryfic_hero {
     margin-top: 5rem;
     position: relative;
-    height: calc(100vh - 12rem);
+    height: calc(100vh - 6rem);
     max-width: 1920px;
 }
 
@@ -219,7 +219,7 @@ folder{
 .hero_img{
     display: flex;
     justify-content: right;
-    /* height: 30rem; */
+    height: 40rem;
     overflow: hidden;
    
 }
@@ -746,43 +746,59 @@ body::-webkit-scrollbar{
 
 footer{
     margin: 2rem;
-    color: #767676;
+    color: #a7a7a7;
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin-top: 10rem;
+}
+
+.foot_wrap{
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    justify-content: center;
+}
+
+footer>.foot_wrap>section{
     position: relative;
 }
 
 .logo_foot{
     display: flex;
     width: 15rem;
-    margin-bottom: 1rem;
-}
-
-footer div{
-    display: flex;
-}
-
-footer ul:nth-of-type(1){
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    gap: 0.5rem;
-    flex-grow: 1;
-    align-items: end;
-}
-
-footer ul:nth-of-type(2){
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 0.5rem;
-    text-align: end;
 }
 
 #bye_animation{
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000000000;
     width: 20rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -80%);
+}
+
+.footer_list{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+}
+
+.footer_list ul:nth-of-type(1){
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer_list ul:nth-of-type(2){
+    display: flex;
+    gap: 3rem;
+    font-weight: 800;
+
+}
+
+footer p{
+    color: #767676;
+    text-align: center;
 }
